@@ -1,0 +1,27 @@
+citHeader("To cite the FD package in publications please use:")
+
+citEntry(entry="article",
+         title = "A distance-based framework for measuring functional diversity from multiple traits",
+         author = personList(person("Etienne", "Laliberté", email="etiennelaliberte@gmail.com"), person("Pierre", "Legendre", email="pierre.legendre@umontreal.ca")),
+ journal="Ecology",
+ year="submitted",
+
+ textVersion="Laliberté, E., and P. Legendre (submitted) A distance-based framework for measuring functional diversity from multiple traits. Ecology.")
+
+desc <- packageDescription("FD")
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", desc$Date)
+vers <- paste("R package version", desc$Version)
+
+citEntry(entry="Manual",
+title = "FD: measuring functional diversity from multiple traits",
+author = personList(person("Etienne", "Laliberté", email="etiennelaliberte@gmail.com")),
+year = year,
+note = vers,
+textVersion =
+paste("Laliberté, E. (",
+year,
+"). FD: measuring functional diversity from multiple traits. ",
+vers, ".", sep=""))
+
+
+citFooter("See http://www.elaliberte.info/publications for the final reference when the article is published.")

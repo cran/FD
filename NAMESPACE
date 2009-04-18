@@ -1,0 +1,12 @@
+exportPattern("^[^\\.]")
+ade4:::is.euclid
+ade4:::lingoes
+ade4:::cailliez
+ade4:::quasieuclid
+ade4:::dudi.pco
+ade4:::dist.binary
+ade4:::divcmax
+ade4:::bicenter.wt
+vegan:::cascadeKM
+geometry::convhulln
+ape:::mst
