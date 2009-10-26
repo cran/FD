@@ -470,8 +470,8 @@ if (calc.FRic)
 
 # pre-steps for FDiv
 # when calc.FDiv is TRUE, calc.FRic must also be true
-if (!calc.FRic & calc.FDiv) stop("FDiv cannot be computed without FRic: 'calc.FRic' should be TRUE.", "\n")
-if (calc.FDiv) if (min.nb.sp < 3) if (messages) cat("FDiv: Could not be calculated for communities with <3 functionally singular species.","\n")
+if (!calc.FRic & calc.FDiv) cat("FDiv: Cannot be computed when 'calc.FRic' is FALSE.", "\n")
+if (calc.FRic & calc.FDiv) if (min.nb.sp < 3) if (messages) cat("FDiv: Could not be calculated for communities with <3 functionally singular species.","\n")
 
 # pre-steps for calculating FGR
 if (calc.FGR)

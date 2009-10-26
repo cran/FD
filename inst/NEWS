@@ -1,0 +1,11 @@
+-*-Text-*-
+
+FD RELEASE VERSIONS
+===================
+                
+CHANGES IN FD 1.0-1
+                
+        - CITATION: corrected file
+        - gowdis: added compiled C code to considerably improve performance
+        - dbFD: no more error message when calc.FRic = F and calc.FDiv = T
+        

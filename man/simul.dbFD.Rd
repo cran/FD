@@ -35,7 +35,7 @@ A list contaning the following elements:
 A graph plotting the results of the simulations is also returned.
 }
 \references{
-\enc{Laliberté}{Laliberte}, E. and P. Legendre (submitted) A distance-based framework for measuring functional diversity from multiple traits. \emph{Ecology}.
+\enc{Laliberté}{Laliberte}, E. and P. Legendre (2009) A distance-based framework for measuring functional diversity from multiple traits. \emph{Ecology} \bold{in press}.
 
 Ricotta, C. (2005) A note on functional diversity measures. \emph{Basic and Applied Ecology} \bold{6}:479-486.
 }

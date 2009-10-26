@@ -4,13 +4,13 @@ citEntry(entry="article",
          title = "A distance-based framework for measuring functional diversity from multiple traits",
          author = personList(person("Etienne", "Laliberté", email="etiennelaliberte@gmail.com"), person("Pierre", "Legendre", email="pierre.legendre@umontreal.ca")),
  journal="Ecology",
- year="submitted",
+ year="in press",
 
- textVersion="Laliberté, E., and P. Legendre (submitted) A distance-based framework for measuring functional diversity from multiple traits. Ecology.")
+ textVersion="Laliberté, E., and P. Legendre (in press) A distance-based framework for measuring functional diversity from multiple traits. Ecology.")
 
-desc <- packageDescription("FD")
-year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", desc$Date)
-vers <- paste("R package version", desc$Version)
+if(!exists("meta") || is.null(meta)) meta <- packageDescription("foo")
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
+vers <- paste("R package version", meta$Version)
 
 citEntry(entry="Manual",
 title = "FD: measuring functional diversity from multiple traits",
