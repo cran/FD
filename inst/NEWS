@@ -2,6 +2,22 @@
 
 FD RELEASE VERSIONS
 ===================
+
+CHANGES IN FD 1.0-5
+
+	- corrector minor error in functcomp()
+
+CHANGES IN FD 1.0-4
+
+	- added bin.num to functcomp() to allow default behaviour to be over-ridden
+
+CHANGES IN FD 1.0-3
+                
+        - added maxent, added Bill Shipley as co-author of FD
+
+CHANGES IN FD 1.0-2
+                
+        - added useDynLib(FD) in NAMESPACE and deleted zzz.r
                 
 CHANGES IN FD 1.0-1
                 

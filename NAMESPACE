@@ -1,4 +1,5 @@
 exportPattern("^[^\\.]")
+useDynLib(FD)
 ade4:::is.euclid
 ade4:::lingoes
 ade4:::cailliez

@@ -20,17 +20,17 @@
 \concept{CWM}
 \docType{package}
 \title{
-Measure Functional Diversity from Multiple Traits
+Measuring Functional Diversity from Multiple Traits, and Other Tools for Functional Ecology
 }
 \description{
-\pkg{FD} is a package to compute different multidimensional functional diversity (FD) indices. It implements a distance-based framework to measure FD that allows any number and type of functional traits, and can also consider species relative abundances.  
+\pkg{FD} is a package to compute different multidimensional functional diversity (FD) indices. It implements a distance-based framework to measure FD that allows any number and type of functional traits, and can also consider species relative abundances. It also contains other tools for functional ecologists (e.g. \code{\link{maxent}}).
 }
 \details{
 \tabular{ll}{
 Package: \tab FD\cr
 Type: \tab Package\cr
-Version: \tab 1.0-1\cr
-Date: \tab 2009-10-22\cr
+Version: \tab 1.0-5\cr
+Date: \tab 2009-11-30\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 LazyData: \tab yes \cr
@@ -42,7 +42,7 @@ LazyData: \tab yes \cr
 \code{\link{dbFD}} uses principal coordinates analysis (PCoA) to return PCoA axes, which are then used as \sQuote{traits} to compute FD. \code{\link{dbFD}} computes several multidimensional FD indices, including the three indices of \enc{Villéger}{Villeger} et al. (2008): functional richness (FRic), functional evenness (FEve), and functional divergence (FDiv). It also computes functional dispersion (FDis) (\enc{Laliberté}{Laliberte} and Legendre 2009), Rao's quadratic entropy (Q) (\enc{Botta-Dukát}{Botta-Dukat} 2005), a posteriori functional group richness (FGR), and the community-level weighted means of trait values (CWM), an index of functional composition. Some of these indices can be weighted by species abundances. \code{\link{dbFD}} includes several options for flexibility.  
 }
 \author{
-Etienne \enc{Laliberté}{Laliberte}
+Etienne \enc{Laliberté}{Laliberte} and Bill Shipley
 
 Maintainer: Etienne \enc{Laliberté}{Laliberte} <etiennelaliberte@gmail.com> \url{http://www.elaliberte.info}
 }

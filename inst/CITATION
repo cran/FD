@@ -13,14 +13,14 @@ year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
 vers <- paste("R package version", meta$Version)
 
 citEntry(entry="Manual",
-title = "FD: measuring functional diversity from multiple traits",
-author = personList(person("Etienne", "Laliberté", email="etiennelaliberte@gmail.com")),
+title = "FD: measuring functional diversity from multiple traits, and other tools for functional ecology",
+author = personList(person("Etienne", "Laliberté", email="etiennelaliberte@gmail.com"), person("Bill", "Shipley", email="bill.shipley@usherbrooke.ca")),
 year = year,
 note = vers,
 textVersion =
-paste("Laliberté, E. (",
+paste("Laliberté, E. and B. Shipley. (",
 year,
-"). FD: measuring functional diversity from multiple traits. ",
+"). FD: measuring functional diversity from multiple traits, and other tools for functional ecology. ",
 vers, ".", sep=""))
 
 

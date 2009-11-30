@@ -88,7 +88,6 @@ ex3 <- gowdis(dummy$trait, asym.bin = 7)
 ex3
 
 # example with trait data from New Zealand vascular plant species
-# takes a few seconds
 ex4 <- gowdis(tussock$trait)
 }
 \keyword{multivariate}
