@@ -8,22 +8,22 @@
 Estimating Probabilities via Maximum Entropy: Improved Iterative Scaling
 }
 \description{
-\code{maxent} returns the probabilities that maximize the entropy conditional on a series of constraints that are linear in the features. It relies on the Improved Iterative Scaling algorithm of Della Pietra et al. (1997). It has been used to obtain the predicted relative abundances of a set of species given the trait values of each species and the community-aggregated trait values at a site (Shipley et al. 2006; Shipley 2009; Sonnier et al. 2009).
+\code{maxent} returns the probabilities that maximize the entropy conditional on a series of constraints that are linear in the features. It relies on the Improved Iterative Scaling algorithm of Della Pietra et al. (1997). It has been used to predict the relative abundances of a set of species given the trait values of each species and the community-aggregated trait values at a site (Shipley et al. 2006; Shipley 2009; Sonnier et al. 2009).
 }
 
 \usage{
-maxent(c.means, c.mat, prior, tol = 1e-08, lambda = F)
+maxent(constr, states, prior, tol = 1e-07, lambda = FALSE)
 }
 
 \arguments{
-  \item{c.means}{
-vector of the constraint means (e.g. community-aggregated trait values at each site)
+  \item{constr}{
+vector of macroscopical constraints (e.g. community-aggregated trait values). Can also be a matrix or data frame, with constraints as columns and data sets (e.g. sites) as rows.
 }
-  \item{c.mat}{
-matrix of constraints (rows) for each state (columns), e.g. a traits (rows) by species (columns) matrix
+  \item{states}{
+vector, matrix or data frame of states (columns) and their attributes (rows).
 }
   \item{prior}{
-vector of prior probabilities. Can be missing, in which case a uniform distribution is assumed (i.e. maximally uninformative prior).
+vector, matrix or data frame of prior probabilities of states (columns). Can be missing, in which case a maximally uninformative prior is assumed (i.e. uniform distribution).
 }
   \item{tol}{
 tolerance threshold to determine convergence. See \sQuote{details} section. 
@@ -37,19 +37,23 @@ The biological model of community assembly through trait-based habitat
 filtering (Keddy 1992) has been translated mathematically
 via a maximum entropy (maxent) model by Shipley et al. (2006) and
 Shipley (2009). A maxent model contains three components: (i) a set
-of possible states, (ii) a set of macroscopic empirical constraints,
+of possible states and their attributes, (ii) a set of macroscopic empirical constraints,
 and (iii) a prior probability distribution \eqn{\mathbf{q}=[q_j]}{q = [qj]}.
 
 In the context of community assembly, states are species, macroscopic
 empirical constraints are community-aggregated traits, and prior probabilities
 \eqn{\mathbf{q}}{q} are the relative abundances of species of the regional
 pool (Shipley et al. 2006, Shipley 2009). By default, these prior
-probabilities \eqn{\mathbf{q}}{q} are uniformally distributed (a maximally uninformative
-prior), but can be specificied otherwise (Shipley 2009, Sonnier et
-al. 2009).
+probabilities \eqn{\mathbf{q}}{q} are maximally uninformative (i.e. a uniform distribution),
+but can be specificied otherwise (Shipley 2009, Sonnier et al. 2009).
 
 To facilitate the link between the biological model and the mathematical
 model, in the following description of the algorithm states are species and constraints are traits.
+
+Note that if \code{constr} is a matrix or data frame containing several sets (rows),
+a maxent model is run on each individual set. In this case if \code{prior} is a vector,
+the same prior is used for each set. A different prior can also be specified for each set.
+In this case, the number of rows in \code{prior} must be equal to the number of rows in \code{constr}. 
 
 If \eqn{\mathbf{q}}{q} is not specified, set \eqn{p_{j}=1/S}{pj = 1 / S} for each of the
 \eqn{S}{S} species (i.e. a uniform distribution), where \eqn{p_{j}}{pj} is the
@@ -87,8 +91,8 @@ pj(k+1) = [pj(k) e^(gamma_i(k) tij)/ Z]}
 4. If \eqn{|max\left(p\left(k+1\right)-p\left(k\right)\right)|\leq}{|max(pj(k+1) - pj(k))| <=} tolerance threshold (i.e. argument \code{tol}) then stop, else repeat steps 1 to 3.
 
 When convergence is achieved then the resulting probabilities (\eqn{\hat{p}_{j}}{pj_hat})
-are those that are as close as possible to \eqn{q_j}{qj} while simultaneously maximize the entropy conditional on
-the community-aggregated traits and that maximize the likelihood of
+are those that are as close as possible to \eqn{q_j}{qj} while simultaneously maximize
+the entropy conditional on the community-aggregated traits. The solution to this problem is
 the Gibbs distribution:
 
 \deqn{\hat{p}_{j}=\frac{q_{j}e^{\left({\displaystyle -}{\displaystyle \sum_{i=1}^{T}\lambda_{i}t_{ij}}\right)}}{{\displaystyle \sum_{j=1}^{S}q_{j}}e^{\left({\displaystyle -}{\displaystyle \sum_{i=1}^{T}\lambda_{i}t_{ij}}\right)}}=\frac{q_{j}e^{\left({\displaystyle -}{\displaystyle \sum_{i=1}^{T}\lambda_{i}t_{ij}}\right)}}{Z}}{%
@@ -120,6 +124,9 @@ The intercept is the value of \eqn{ln(Z)}{ln(Z)} and the slopes are the values
 of \eqn{\lambda_{i}}{lambda_i} and these slopes (Lagrange multipliers) measure
 by how much the \eqn{ln(\hat{p}_{j})}{ln(pj_hat)}, i.e. the \eqn{ln}{ln}(relative abundances),
 changes as the value of the trait changes.
+
+\code{\link{maxent.test}} provides permutation tests for maxent models (Shipley 2010).
+
 }
 
 \value{
@@ -128,6 +135,9 @@ changes as the value of the trait changes.
   \item{entropy}{Shannon entropy of \code{prob}}
   \item{iter}{number of iterations required to reach convergence}
   \item{lambda}{\eqn{\lambda}{lambda}-values, only returned if \code{lambda = T}}
+  \item{constr}{macroscopical constraints}
+  \item{states}{states and their attributes}
+  \item{prior}{prior probabilities}
 }
 \references{
 Della Pietra, S., V. Della Pietra, and J. Lafferty (1997) Inducing features of random fields. \emph{IEEE Transactions Pattern Analysis and Machine Intelligence} \bold{19}:1-13.
@@ -137,6 +147,8 @@ Keddy, P. A. (1992) Assembly and response rules: two goals for predictive commun
 Shipley, B., D. Vile, and \enc{É}{E}. Garnier (2006) From plant traits to plant communities: a statistical mechanistic approach to biodiversity. \emph{Science} \bold{314}: 812--814.
 
 Shipley, B. (2009) From Plant Traits to Vegetation Structure: Chance and Selection in the Assembly of Ecological Communities. Cambridge University Press, Cambridge, UK. 290 pages.
+
+Shipley, B. (2010) Inferential permutation tests for maximum entropy models in ecology. \emph{Ecology} \bold{in press}.
 
 Sonnier, G., Shipley, B., and M. L. Navas. 2009. Plant traits, species pools and the prediction of relative abundance in plant communities: a maximum entropy approach. \emph{Journal of Vegetation Science} \bold{in press}.
 }
@@ -149,7 +161,8 @@ Ported to \pkg{FD} by Etienne \enc{Laliberté}{Laliberte}.
 }
 
 \seealso{
-\code{\link{functcomp}} to compute community-aggregated traits.
+\code{\link{functcomp}} to compute community-aggregated traits,
+and \code{\link{maxent.test}} for the permutation tests proposed by Shipley (2010). 
 }
 \examples{
 # an unbiased 6-sided dice, with mean = 3.5
@@ -160,28 +173,22 @@ maxent(3.5, 1:6)
 # a biased 6-sided dice, with mean = 4
 maxent(4, 1:6)
 
-
 # example with tussock dataset
 traits <- tussock$trait[, c(2:7, 11)] # use only continuous traits
 traits <- na.omit(traits) # remove 2 species with NA's
-labs <- rownames(traits)
-# standardise traits to unit variance
-traits <- apply(traits, 2, function(x) x / sd(x))
-rownames(traits) <- labs
 abun <- tussock$abun[, rownames(traits)] # abundance matrix
 abun <- t(apply(abun, 1, function(x) x / sum(x) )) # relative abundances
 agg <- functcomp(traits, abun) # community-aggregated traits
 traits <- t(traits) # transpose matrix
 
 # run maxent on site 1 (first row of abun), all species
-pred.abun <- maxent(as.numeric(agg[1,]), traits)
+pred.abun <- maxent(agg[1,], traits)
 
-# plot results, note poor fit
-y <- pred.abun$prob
-x <- as.numeric(abun[1,])
-plot(y ~ x, xlim = c(0, 1), ylim = c(0, 1), xlab = "observed abundances",
-ylab = "predicted abundances", main = "site 1, all 51 species\nall 7 traits")
-abline(0, 1, col = "grey25")
+\dontrun{
+# do the constraints give predictive ability?
+# may take a minute or so...
+maxent.test(pred.abun, obs = abun[1,], nperm = 49)
+}
 }
 
 \keyword{distribution}

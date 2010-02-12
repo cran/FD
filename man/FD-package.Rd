@@ -29,8 +29,8 @@ Measuring Functional Diversity from Multiple Traits, and Other Tools for Functio
 \tabular{ll}{
 Package: \tab FD\cr
 Type: \tab Package\cr
-Version: \tab 1.0-5\cr
-Date: \tab 2009-11-30\cr
+Version: \tab 1.0-7\cr
+Date: \tab 2010-02-12\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 LazyData: \tab yes \cr
@@ -39,7 +39,7 @@ LazyData: \tab yes \cr
 
 \pkg{FD} computes different multidimensional FD indices. To compute FD indices, a species-by-trait(s) matrix is required (or at least a species-by-species distance matrix). \code{\link{gowdis}} computes the Gower dissimilarity from different trait types (continuous, ordinal, nominal, or binary), and tolerates \code{\link{NA}}s. It can treat ordinal variables as described by Podani (1999), and can handle asymetric binary variables and variable weights. \code{\link{gowdis}} is called by \code{\link{dbFD}}, the main function of \pkg{FD}.  
 
-\code{\link{dbFD}} uses principal coordinates analysis (PCoA) to return PCoA axes, which are then used as \sQuote{traits} to compute FD. \code{\link{dbFD}} computes several multidimensional FD indices, including the three indices of \enc{Villéger}{Villeger} et al. (2008): functional richness (FRic), functional evenness (FEve), and functional divergence (FDiv). It also computes functional dispersion (FDis) (\enc{Laliberté}{Laliberte} and Legendre 2009), Rao's quadratic entropy (Q) (\enc{Botta-Dukát}{Botta-Dukat} 2005), a posteriori functional group richness (FGR), and the community-level weighted means of trait values (CWM), an index of functional composition. Some of these indices can be weighted by species abundances. \code{\link{dbFD}} includes several options for flexibility.  
+\code{\link{dbFD}} uses principal coordinates analysis (PCoA) to return PCoA axes, which are then used as \sQuote{traits} to compute FD. \code{\link{dbFD}} computes several multidimensional FD indices, including the three indices of \enc{Villéger}{Villeger} et al. (2008): functional richness (FRic), functional evenness (FEve), and functional divergence (FDiv). It also computes functional dispersion (FDis) (\enc{Laliberté}{Laliberte} and Legendre 2010), Rao's quadratic entropy (Q) (\enc{Botta-Dukát}{Botta-Dukat} 2005), a posteriori functional group richness (FGR), and the community-level weighted means of trait values (CWM), an index of functional composition. Some of these indices can be weighted by species abundances. \code{\link{dbFD}} includes several options for flexibility.  
 }
 \author{
 Etienne \enc{Laliberté}{Laliberte} and Bill Shipley
@@ -49,7 +49,7 @@ Maintainer: Etienne \enc{Laliberté}{Laliberte} <etiennelaliberte@gmail.com> \url
 \references{
 \enc{Botta-Dukát}{Botta-Dukat}, Z. (2005) Rao's quadratic entropy as a measure of functional diversity based on multiple traits. \emph{Journal of Vegetation Science} \bold{16}:533-540.
 
-\enc{Laliberté}{Laliberte}, E. and P. Legendre (2009) A distance-based framework for measuring functional diversity from multiple traits. \emph{Ecology} \bold{in press}.
+\enc{Laliberté}{Laliberte}, E. and P. Legendre (2010) A distance-based framework for measuring functional diversity from multiple traits. \emph{Ecology} \bold{91}:299-305.
 
 Podani, J. (1999) Extending Gower's general coefficient of similarity to ordinal characters. \emph{Taxon} \bold{48}:331-340.
 

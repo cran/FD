@@ -3,6 +3,17 @@
 FD RELEASE VERSIONS
 ===================
 
+CHANGES IN FD 1.0-7
+
+	- added maxent.test, following Shipley (2010)
+        - changed tol to 1e-7 in maxent
+        - modified arguments of maxent
+        - maxent can now be run on multiple sites
+
+CHANGES IN FD 1.0-6
+
+	- added compiled FORTRAN code for loop in maxent(). About 10x boost in speed.
+
 CHANGES IN FD 1.0-5
 
 	- corrector minor error in functcomp()
