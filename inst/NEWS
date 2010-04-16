@@ -3,6 +3,15 @@
 FD RELEASE VERSIONS
 ===================
 
+CHANGES IN FD 1.0-9
+
+	- fixed bug to compute sing.sp in dbFD(). Thanks to Sarah Berke for reporting.
+        - added message to mention maxentMC is available as a faster alternative for multicore processors (Linux or Mac only)
+CHANGES IN FD 1.0-8
+
+	- changed behaviour of quick = T in maxent.test. Now also can stop earlier when H0 is true.
+        - corrected last example in maxent.test (typo)
+
 CHANGES IN FD 1.0-7
 
 	- added maxent.test, following Shipley (2010)

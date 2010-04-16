@@ -162,7 +162,9 @@ Ported to \pkg{FD} by Etienne \enc{Laliberté}{Laliberte}.
 
 \seealso{
 \code{\link{functcomp}} to compute community-aggregated traits,
-and \code{\link{maxent.test}} for the permutation tests proposed by Shipley (2010). 
+and \code{\link{maxent.test}} for the permutation tests proposed by Shipley (2010).
+
+Another faster version of \code{maxent} for multicore processors called \code{maxentMC} is available from Etienne \enc{Laliberté}{Laliberte} (\email{etiennelaliberte@gmail.com}). It's exactly the same as \code{maxent} but makes use of the \pkg{multicore}, \pkg{doMC}, and \pkg{foreach} packages. Because of this, \code{maxentMC} only works on POSIX-compliant OS's (essentially anything but Windows).
 }
 \examples{
 # an unbiased 6-sided dice, with mean = 3.5
@@ -186,7 +188,6 @@ pred.abun <- maxent(agg[1,], traits)
 
 \dontrun{
 # do the constraints give predictive ability?
-# may take a minute or so...
 maxent.test(pred.abun, obs = abun[1,], nperm = 49)
 }
 }

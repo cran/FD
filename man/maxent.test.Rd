@@ -16,7 +16,7 @@ A plot can be returned to facilitate interpretation.
 }
 
 \usage{
-maxent.test(model, obs, sub.c, nperm = 99, quick = FALSE,
+maxent.test(model, obs, sub.c, nperm = 99, quick = TRUE,
 alpha = 0.05, plot = TRUE)
 }
 
@@ -35,8 +35,8 @@ If missing, null hypothesis 1 is tested.
 number of permutations for the test.
 }
   \item{quick}{
-if \code{TRUE}, the algorithm stops when the upper confidence interval of the \emph{P}-value
-is equal to or smaller than \code{alpha}. Can be useful to speed up the routine.
+if \code{TRUE}, the algorithm stops when \code{alpha} is outside the confidence interval of the \emph{P}-value.
+Can be useful to speed up the routine.
 }
 
   \item{alpha}{
@@ -50,6 +50,8 @@ if \code{TRUE}, a plot is returned to facilitate interpretation.
 }
 \details{
 \code{maxent.test} is a direct translation of the permutation tests described by Shipley (2010). Please refer to this article for details.
+
+Using \code{quick = FALSE} will return the true null probability for a given \code{nperm}. However, if \code{nperm} is large (a rule-of-thumb is \eqn{>=999}{>=999} permutations for allowing inference at \eqn{\alpha}{alpha} = 0.05), this can take a very long time. Using \code{quick = TRUE} is a much faster and highly recommended alternative if one is only interested in accepting/rejecting the null hypothesis at the specified \eqn{\alpha}{alpha}-level given by argument \code{alpha}.
 
 If \code{\link{maxent}} was run with multiple data sets (i.e. if \code{constr} had more than one row), then  \code{maxent.test} performs the test for all sets simultaneously, following the \sQuote{omnibus} procedure described by Shipley (2010).
 
@@ -95,7 +97,7 @@ Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com}
 \url{http://www.elaliberte.info}
 }
 
-\section{Warning}{\code{maxent.test} is a computationally intensive function. The tests can take a long time when \code{nperm} is large.} 
+\section{Warning}{\code{maxent.test} is a computationally intensive function. The tests can take a very long time when \code{nperm} is large and \code{quick = FALSE}. It is highly recommended to use \code{quick = TRUE} because of this, unless you are interested in obtaining the true null probability.} 
 
 \seealso{
 \code{\link{maxent}} to run the maximum entropy model that is required by \code{maxent.test}. 
@@ -119,7 +121,7 @@ maxent.test(pred.abun, obs = abun[1,], nperm = 49)
 
 # are height, LDMC, and leaf [N] important constraints?
 maxent.test(pred.abun, obs = abun[1,], sub.c = c("height",
-"LMDC", "leafN"), nperm = 49)
+"LDMC", "leafN"), nperm = 49)
 }
 }
 

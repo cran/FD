@@ -1,4 +1,4 @@
-maxent.test <- function(model, obs, sub.c, nperm = 99, quick = FALSE, alpha = 0.05, plot = TRUE){
+maxent.test <- function(model, obs, sub.c, nperm = 99, quick = TRUE, alpha = 0.05, plot = TRUE){
      
     # check input
     if (is.vector(obs)){
@@ -37,8 +37,8 @@ maxent.test <- function(model, obs, sub.c, nperm = 99, quick = FALSE, alpha = 0.
     if (missing(sub.c)){
        obs.stat <- stat(obs, prob, prior)
        count <- 0
-       within.ci <- FALSE
-       while(!within.ci && count < nperm){
+       outside.ci <- FALSE
+       while(!outside.ci && count < nperm){
           count <- count + 1
           prob.temp <- matrix(NA, n.sets, n.states)
              for (j in 1:n.sets){
@@ -48,12 +48,13 @@ maxent.test <- function(model, obs, sub.c, nperm = 99, quick = FALSE, alpha = 0.
                prob.temp[j, ] <- maxent(constr.perm, states.perm, prior[j, ])$prob
              }
        values[count] <- stat(obs, prob.temp, prior)
-       if (quick){
-          val.temp <- values[1:count]
-          p.temp <- (length(val.temp[val.temp >= obs.stat]) + 1) / (length(val.temp) + 1)
+       val.temp <- values[1:count]
+       p.temp <- (length(val.temp[val.temp >= obs.stat]) + 1) / (length(val.temp) + 1)
+       if (quick && p.temp < 1){
           ci.hi <- p.temp + 1.96 * sqrt( (p.temp * (1 - p.temp)) / count )
-          within.ci <- ci.hi <= alpha
-          if (within.ci) nperm = count
+          ci.lo <- p.temp - 1.96 * sqrt( (p.temp * (1 - p.temp)) / count )
+          outside.ci <- ci.hi <= alpha || ci.lo >= alpha
+          if (outside.ci) nperm = count
         }
       }
     }
@@ -68,8 +69,8 @@ maxent.test <- function(model, obs, sub.c, nperm = 99, quick = FALSE, alpha = 0.
        prob.a <- maxent(constr[, -sub.c, drop = F], states[-sub.c, , drop = F], prior)$prob
        obs.stat <- stat(obs, prob, prob.a)
        count <- 0
-       within.ci <- FALSE
-       while(!within.ci && count < nperm){
+       outside.ci <- FALSE
+       while(!outside.ci && count < nperm){
           count <- count + 1
           prob.temp <- matrix(NA, n.sets, n.states)
              for (j in 1:n.sets){
@@ -80,12 +81,13 @@ maxent.test <- function(model, obs, sub.c, nperm = 99, quick = FALSE, alpha = 0.
                prob.temp[j, ] <- maxent(constr.perm, states.perm, prior[j, ])$prob
              }
        values[count] <- stat(obs, prob.temp, prob.a)
-       if (quick){
-          val.temp <- values[1:count]
-          p.temp <- (length(val.temp[val.temp >= obs.stat]) + 1) / (length(val.temp) + 1)
+       val.temp <- values[1:count]
+       p.temp <- (length(val.temp[val.temp >= obs.stat]) + 1) / (length(val.temp) + 1)
+       if (quick && p.temp < 1){
           ci.hi <- p.temp + 1.96 * sqrt( (p.temp * (1 - p.temp)) / count )
-          within.ci <- ci.hi <= alpha
-          if (within.ci) nperm = count
+          ci.lo <- p.temp - 1.96 * sqrt( (p.temp * (1 - p.temp)) / count )
+          outside.ci <- ci.hi <= alpha || ci.lo >= alpha
+          if (outside.ci) nperm = count
         }
       }
     }
