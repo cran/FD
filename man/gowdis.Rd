@@ -6,13 +6,13 @@
 \code{gowdis} measures the Gower (1971) dissimilarity for mixed variables, including asymmetric binary variables. Variable weights can be specified. \code{gowdis} implements Podani's (1999) extension to ordinal variables.
 }
 \usage{
-gowdis(x, w, asym.bin = NULL, ord = c("podani", "metric"))
+gowdis(x, w, asym.bin = NULL, ord = c("podani", "metric", "classic"))
 }
 \arguments{
   \item{x}{matrix or data frame containing the variables. Variables can be \code{\link{numeric}}, \code{\link{ordered}}, or \code{\link{factor}}. Symmetric or asymmetric binary variables should be \code{\link{numeric}} and only contain 0 and 1. \code{\link{character}} variables will be converted to \code{\link{factor}}. \code{\link{NA}}s are tolerated.}
   \item{w}{vector listing the weights for the variables in \code{x}. Can be missing, in which case all variables have equal weights.}
   \item{asym.bin}{vector listing the asymmetric binary variables in \code{x}.}
-  \item{ord}{character string specifying the method to be used for ordinal variables (i.e. \code{\link{ordered}}). \code{"podani"} refers to Eqs. 2a-b of Podani (1999), while \code{"metric"} refers to his Eq. 3 (see \sQuote{details}). Can be abbreviated.}
+  \item{ord}{character string specifying the method to be used for ordinal variables (i.e. \code{\link{ordered}}). \code{"podani"} refers to Eqs. 2a-b of Podani (1999), while \code{"metric"} refers to his Eq. 3 (see \sQuote{details}); both options convert ordinal variables to ranks. \code{"classic"} simply treats ordinal variables as continuous variables. Can be abbreviated.}
 }
 \details{
 \code{gowdis} computes the Gower (1971) similarity coefficient exactly as described by Podani (1999), then converts it to a dissimilarity coefficient by using \eqn{D = 1 - S}. It integrates variable weights as described by Legendre and Legendre (1998).
@@ -41,7 +41,7 @@ For continuous variables,
 where \eqn{x_{i.max}}{Xi.max} and \eqn{x_{i.min}}{Xi.min} are the maximum and minimum values of variable \eqn{i}, respectively.
 
 
-For ordinal variables, all \eqn{x_{ij}}{Xij} are replaced by their ranks \eqn{r_{ij}}{Rij} determined over all objects (such that ties are also considered), and then
+For ordinal variables, when \code{ord = "podani"} or \code{ord = "metric"}, all \eqn{x_{ij}}{Xij} are replaced by their ranks \eqn{r_{ij}}{Rij} determined over all objects (such that ties are also considered), and then
 
 
 if \code{ord = "podani"}
@@ -58,7 +58,10 @@ if \code{ord = "metric"}
 
     \deqn{s_{ijk} = 1 - \frac{|r_{ij} - r_{ik}|}{r_{i.max} - r_{i.min}} }{%
     Sijk = 1 - [ |Rij - Rik| / (Ri.max - Ri.min) ]}
+
+When \code{ord = "classic"}, ordinal variables are simply treated as continuous variables.
 }
+
 \value{
 an object of class \code{\link{dist}} with the following attributes: \code{Labels}, \code{Types} (the variable types, where 'C' is continuous/numeric, 'O' is ordinal, 'B' is symmetric binary, 'A' is asymmetric binary, and 'N' is nominal), \code{Size}, \code{Metric}.
 }
@@ -70,7 +73,7 @@ Legendre, P. and L. Legendre (1998) \emph{Numerical Ecology}. 2nd English editio
 Podani, J. (1999) Extending Gower's general coefficient of similarity to ordinal characters. \emph{Taxon} \bold{48}:331-340.
 }
 \author{Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com} \url{http://www.elaliberte.info}, with some help from Philippe Casgrain for the C interface.}
-\seealso{\code{\link[cluster]{daisy}} is similar but less flexible, since it does not include variable weights and does not treat ordinal variables as described by Podani (1999).}
+\seealso{\code{\link[cluster]{daisy}} is similar but less flexible, since it does not include variable weights and does not treat ordinal variables as described by Podani (1999). Using \code{ord = "classic"} reproduces the behaviour of \code{\link[cluster]{daisy}}.}
 \examples{
 ex1 <- gowdis(dummy$trait)
 ex1

@@ -100,7 +100,9 @@ Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com}
 \section{Warning}{\code{maxent.test} is a computationally intensive function. The tests can take a very long time when \code{nperm} is large and \code{quick = FALSE}. It is highly recommended to use \code{quick = TRUE} because of this, unless you are interested in obtaining the true null probability.} 
 
 \seealso{
-\code{\link{maxent}} to run the maximum entropy model that is required by \code{maxent.test}. 
+\code{\link{maxent}} to run the maximum entropy model that is required by \code{maxent.test}.
+
+Another faster version of \code{maxent.test} for multicore processors called \code{maxent.testMC} is available from Etienne \enc{Laliberté}{Laliberte} (\email{etiennelaliberte@gmail.com}). It's exactly the same as \code{maxent.test} but makes use of the \pkg{multicore}, \pkg{doMC}, and \pkg{foreach} packages. Because of this, \code{maxentMC} only works on POSIX-compliant OS's (essentially anything but Windows).
 }
 \examples{
 

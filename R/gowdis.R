@@ -1,5 +1,5 @@
 `gowdis` <-
-function(x, w, asym.bin = NULL, ord = c("podani", "metric") ){
+function(x, w, asym.bin = NULL, ord = c("podani", "metric", "classic") ){
 
 if (length(dx <- dim(x)) != 2 || !(is.data.frame(x) || is.numeric(x))) stop("x is not a dataframe or a numeric matrix\n")
 
@@ -58,7 +58,11 @@ type <- as.numeric(type)
 x <- data.matrix(x)
 
 # convert ordinal variables to ranks, following Podani (1999)
-if (any(type == 2) ) for (i in 1:p) if (type[i] == 2) x[,i] <- rank(x[,i], na.last = "keep")
+# or when ord = "classic", convert to numeric
+if (any(type == 2) ) {
+   if (ord != "classic")   for (i in 1:p) if (type[i] == 2) x[,i] <- rank(x[,i], na.last = "keep")
+   else   for (i in 1:p) if (type[i] == 2) x[,i] <- as.numeric(x[,i])
+}
 
 # compute the range of each variable (this will only be used for numeric and ordinal variables)
 range.Data <- function(v){

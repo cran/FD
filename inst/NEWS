@@ -3,10 +3,22 @@
 FD RELEASE VERSIONS
 ===================
 
+CHANGES IN FD 1.0-11
+
+        - corrected NAMESPACE file
+
+CHANGES IN FD 1.0-10
+
+        - added option ord = "classic" in gowdis to reproduce behaviour of daisy in {cluster}
+        - added message about dbFD sometimes crashing due to calc.FRic = "TRUE", and proposed 'solutions'.
+	- corrected minor bug in dbFD to detect if one species had no trait data
+	- changed stand.FRic to FALSE in dbFD by default
+
 CHANGES IN FD 1.0-9
 
 	- fixed bug to compute sing.sp in dbFD(). Thanks to Sarah Berke for reporting.
         - added message to mention maxentMC is available as a faster alternative for multicore processors (Linux or Mac only)
+
 CHANGES IN FD 1.0-8
 
 	- changed behaviour of quick = T in maxent.test. Now also can stop earlier when H0 is true.

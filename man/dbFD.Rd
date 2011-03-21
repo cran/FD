@@ -25,7 +25,7 @@
 dbFD(x, a, w, w.abun = TRUE, stand.x = TRUE,
     ord = c("podani", "metric"), asym.bin = NULL,
     corr = c("sqrt", "cailliez", "lingoes", "none"),
-    calc.FRic = TRUE, m = "max", stand.FRic = TRUE,
+    calc.FRic = TRUE, m = "max", stand.FRic = FALSE,
     scale.RaoQ = FALSE, calc.FGR = FALSE, clust.type = "ward",
     km.inf.gr = 2, km.sup.gr = nrow(x) - 1, km.iter = 100,
     km.crit = c("calinski", "ssi"), calc.CWM = TRUE,
@@ -55,7 +55,7 @@ The number of species (columns) in \code{a} must match the number of species (ro
   \item{stand.FRic}{logical; should FRic be standardized by the \sQuote{global} FRic that include all species, so that FRic is constrained between 0 and 1?}
   \item{scale.RaoQ}{logical; should Rao's Q be scaled by its maximal value over all frequency distributions? See \code{\link[ade4]{divc}}.}
   \item{calc.FGR}{logical; should FGR be computed?}
-  \item{clust.type}{character string specifying the clustering method to be used to create the dendrogram of species for FGR. Options are \code{"ward"}, \code{"single"}, \code{"complete"}, \code{"average"}, \code{"mcquitty"}, \code{"median"}, \code{"centroid"}, and \code{"kmeans"}. For \code{"kmeans"}, the argument \code{groups.kmeans} also applies. See \code{\link{hclust}} and \code{\link[vegan]{cascadeKM}} for more details.}
+  \item{clust.type}{character string specifying the clustering method to be used to create the dendrogram of species for FGR. Options are \code{"ward"}, \code{"single"}, \code{"complete"}, \code{"average"}, \code{"mcquitty"}, \code{"median"}, \code{"centroid"}, and \code{"kmeans"}. For \code{"kmeans"}, other arguments also apply (\code{km.inf.fr}, \code{km.sup.gr}, \code{km.iter}, and \code{km.crit}). See \code{\link{hclust}} and \code{\link[vegan]{cascadeKM}} for more details.}
   \item{km.inf.gr}{the number of groups for the partition with the smallest number of groups of the cascade (min). Only applies if \code{calc.FGR} is \code{TRUE} and \code{clust.type} is \code{"kmeans"}. See \code{\link[vegan]{cascadeKM}} for more details.}
   \item{km.sup.gr}{the number of groups for the partition with the largest number of groups of the cascade (max). Only applies if \code{calc.FGR} is \code{TRUE} and \code{clust.type} is \code{"kmeans"}. See \code{\link[vegan]{cascadeKM}} for more details.}
   \item{km.iter}{the number of random starting configurations for each value of \eqn{K}. Only applies if \code{calc.FGR} is \code{TRUE} and \code{clust.type} is \code{"kmeans"}. See \code{\link[vegan]{cascadeKM}} for more details.}
@@ -139,6 +139,8 @@ Sokal, R. R. and C. D. Michener (1958) A statistical method for evaluating syste
 }
 \author{Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com} \url{http://www.elaliberte.info}}
 \note{\code{dbFD} borrows code from the \code{F_RED} function of \enc{Villéger}{Villeger} et al. (2008).}
+\section{Warning}{Users often report that \code{dbFD} crashed during their analysis. Generally this occurs under Windows, and is almost always due to the computation of convex hull volumes. Possible solutions are to choose \code{calc.FRic = "FALSE"}, or to reduce the dimensionality of the trait matrix using the \code{"m"} argument.} 
+
 \seealso{\code{\link{gowdis}}, \code{\link{functcomp}}, \code{\link{fdisp}}, \code{\link{simul.dbFD}}, \code{\link[ade4]{divc}}, \code{\link[vegan]{treedive}}, \code{\link[vegan]{betadisper}}}
 \examples{
 # mixed trait types, NA's
