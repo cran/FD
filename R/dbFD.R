@@ -294,7 +294,7 @@ if (!is.euclid(x.dist) )
 
 # perform PCoA on x.dist2
 x.pco <- dudi.pco(x.dist2, scannf = FALSE, full = TRUE)
-traits <- x.pco$li
+traits <- round(x.pco$li, .Machine$double.exponent)
 
 # calculate nb.sp to decide if dimensionality reduction is required for convex hull volume
 # nb.sp = number of unique species in each community

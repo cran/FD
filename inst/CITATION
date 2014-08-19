@@ -16,11 +16,11 @@ vers <- paste("R package version", meta$Version)
 
 citEntry(entry="Manual",
 title = "FD: measuring functional diversity from multiple traits, and other tools for functional ecology",
-author = personList(person("Etienne", "Laliberté", email="etiennelaliberte@gmail.com"), person("Bill", "Shipley", email="bill.shipley@usherbrooke.ca")),
+author = personList(person("Etienne", "Laliberté", email="etiennelaliberte@gmail.com"), person("Pierre", "Legendre", email="pierre.legendre@umontreal.ca"), person("Bill", "Shipley", email="bill.shipley@usherbrooke.ca")),
 year = year,
 note = vers,
 textVersion =
-paste("Laliberté, E. and B. Shipley. (",
+paste("Laliberté, E., Legendre, P., and B. Shipley. (",
 year,
 "). FD: measuring functional diversity from multiple traits, and other tools for functional ecology. ",
 vers, ".", sep=""))

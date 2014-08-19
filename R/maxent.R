@@ -16,6 +16,7 @@ maxent <- function(constr, states, prior, tol = 1e-07, lambda = FALSE){
          }
     if (is.data.frame(states)) states <- as.matrix(states)
     if (!is.numeric(states)) stop("states must only contain numeric values\n")
+    if (any(states <= 0)) stop("states cannot contain zero or negative values\n")
     if (dim(states)[2] == 1 && dim(states)[1] > 1) states <- t(states)
     s.names <- dimnames(states)[[2]]
     c.names <- dimnames(states)[[1]]
@@ -46,8 +47,8 @@ maxent <- function(constr, states, prior, tol = 1e-07, lambda = FALSE){
     entropy <- rep(NA, n.sets) ; names(entropy) <- set.names
     iter <- rep(NA, n.sets) ; names(iter) <- set.names
     if (lambda){
-       lambdas <- matrix(NA, n.sets, n.traits + 1)
-       dimnames(lambdas) <- list(set.names, c("intercept", c.names) )
+       lambdas <- matrix(NA, n.sets, n.traits + 2)
+       dimnames(lambdas) <- list(set.names, c("intercept", c.names, "prior") )
     }
     # FORTRAN loop
     for (i in 1:n.sets){
@@ -56,7 +57,7 @@ maxent <- function(constr, states, prior, tol = 1e-07, lambda = FALSE){
        moments[i, ] <- itscale$moments
        entropy[i] <- itscale$entropy
        iter[i] <- itscale$niter
-       if (lambda) lambdas[i, ] <- coef(lm(log(itscale$prob) ~ t(states) ) )
+       if (lambda) lambdas[i, ] <- coef(lm(log(itscale$prob) ~ t(states) + log(prior[i,]) ) )
    }
 
   # output

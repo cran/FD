@@ -3,6 +3,11 @@
 FD RELEASE VERSIONS
 ===================
 
+CHANGES in FD 1.0-12
+	- added mahaldis function (author: Pierre Legendre)
+	- changed maxent and maxent.test (Bill Shipley)
+  - corrected calculation of nb.sp (thanks to Phil Novack-Gottshall)
+
 CHANGES IN FD 1.0-11
 
         - corrected NAMESPACE file

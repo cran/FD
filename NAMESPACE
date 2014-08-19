@@ -1,2 +1,6 @@
 exportPattern("^[^\\.]")
 useDynLib(FD)
+importFrom(ade4, is.euclid, lingoes, cailliez, quasieuclid, dudi.pco, dist.binary, bicenter.wt, divcmax)
+importFrom(vegan, cascadeKM)
+importFrom(ape, mst)
+importFrom(geometry, convhulln)
