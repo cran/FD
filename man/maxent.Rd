@@ -155,7 +155,7 @@ Sonnier, G., Shipley, B., and M. L. Navas. 2009. Plant traits, species pools and
 \author{
 Bill Shipley \email{bill.shipley@usherbrooke.ca}
 
-\url{http://pages.usherbrooke.ca/jshipley/recherche/}
+\url{http://www.billshipley.recherche.usherbrooke.ca/}
 
 Ported to \pkg{FD} by Etienne \enc{Laliberté}{Laliberte}.
 }

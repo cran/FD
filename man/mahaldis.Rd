@@ -26,7 +26,7 @@ Legendre, P. and L. Legendre (2012) \emph{Numerical Ecology}. 3nd English editio
 \author{
 Pierre Legendre \email{pierre.legendre@umontreal.ca}
 
-\url{http://www.bio.umontreal.ca/legendre/indexEn.html}
+\url{http://adn.biol.umontreal.ca/~numericalecology/}
 
 Ported to \pkg{FD} by Etienne \enc{Laliberté}{Laliberte}.
 }

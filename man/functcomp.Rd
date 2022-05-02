@@ -35,7 +35,7 @@ a data frame containing the CWM values of each trait for each community.
 \references{
 Lavorel, S., K. Grigulis, S. McIntyre, N. S. G. Williams, D. Garden, J. Dorrough, S. Berman, F. \enc{Quétier}{Quetier}, A. Thébault and A. Bonis (2008) Assessing functional diversity in the field - methodology matters! \emph{Functional Ecology} \bold{22}:134-147.
 }
-\author{Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com} \url{http://www.elaliberte.info}}
+\author{Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com} \url{https://www.elaliberte.info/}}
 \note{
 \code{functcomp} is implemented in \code{\link{dbFD}} and will be returned if \code{calc.CWM} is \code{TRUE}. 
 }

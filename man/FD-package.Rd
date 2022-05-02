@@ -44,7 +44,7 @@ LazyData: \tab yes \cr
 \author{
 Etienne \enc{Laliberté}{Laliberte}, Pierre Legendre and Bill Shipley
 
-Maintainer: Etienne \enc{Laliberté}{Laliberte} <etiennelaliberte@gmail.com> \url{http://www.elaliberte.info}
+Maintainer: Etienne \enc{Laliberté}{Laliberte} <etiennelaliberte@gmail.com> \url{https://www.elaliberte.info/}
 }
 \references{
 \enc{Botta-Dukát}{Botta-Dukat}, Z. (2005) Rao's quadratic entropy as a measure of functional diversity based on multiple traits. \emph{Journal of Vegetation Science} \bold{16}:533-540.

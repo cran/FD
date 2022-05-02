@@ -137,7 +137,7 @@ Sokal, R. R. and C. D. Michener (1958) A statistical method for evaluating syste
 
 \enc{Villéger}{Villeger}, S., N. W. H. Mason and D. Mouillot (2008) New multidimensional functional diversity indices for a multifaceted framework in functional ecology. \emph{Ecology} \bold{89}:2290-2301.
 }
-\author{Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com} \url{http://www.elaliberte.info}}
+\author{Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com} \url{https://www.elaliberte.info/}}
 \note{\code{dbFD} borrows code from the \code{F_RED} function of \enc{Villéger}{Villeger} et al. (2008).}
 \section{Warning}{Users often report that \code{dbFD} crashed during their analysis. Generally this occurs under Windows, and is almost always due to the computation of convex hull volumes. Possible solutions are to choose \code{calc.FRic = "FALSE"}, or to reduce the dimensionality of the trait matrix using the \code{"m"} argument.} 
 

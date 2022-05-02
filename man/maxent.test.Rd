@@ -94,7 +94,7 @@ Shipley, B. (2010) Inferential permutation tests for maximum entropy models in e
 \author{
 Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com}
 
-\url{http://www.elaliberte.info}
+\url{https://www.elaliberte.info/}
 }
 
 \section{Warning}{\code{maxent.test} is a computationally intensive function. The tests can take a very long time when \code{nperm} is large and \code{quick = FALSE}. It is highly recommended to use \code{quick = TRUE} because of this, unless you are interested in obtaining the true null probability.} 

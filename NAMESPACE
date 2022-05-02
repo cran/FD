@@ -4,3 +4,8 @@ importFrom(ade4, is.euclid, lingoes, cailliez, quasieuclid, dudi.pco, dist.binar
 importFrom(vegan, cascadeKM)
 importFrom(ape, mst)
 importFrom(geometry, convhulln)
+importFrom("graphics", "abline", "boxplot", "lines", "mtext", "par",
+           "text", "title")
+importFrom("stats", "aggregate", "as.dist", "coef", "cor", "cor.test",
+           "cutree", "dist", "hclust", "lm", "na.omit", "rlnorm",
+           "rnorm", "runif", "weighted.mean")

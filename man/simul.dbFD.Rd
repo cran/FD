@@ -39,7 +39,7 @@ A graph plotting the results of the simulations is also returned.
 
 Ricotta, C. (2005) A note on functional diversity measures. \emph{Basic and Applied Ecology} \bold{6}:479-486.
 }
-\author{Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com} \url{http://www.elaliberte.info}}
+\author{Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com} \url{https://www.elaliberte.info/}}
 \section{Warning}{The simulations performed by \code{simul.dbFD} can take several hours if \code{length(s)} and/or \code{r} is large. Run a test with the default parameters first.} 
 \seealso{\code{\link{dbFD}}, the function called in \code{simul.dbFD}}
 \examples{

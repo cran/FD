@@ -40,7 +40,7 @@ Anderson, M. J., K. E. Ellingsen and B. H. McArdle (2006) Multivariate dispersio
 
 \enc{Laliberté}{Laliberte}, E. and P. Legendre (2010) A distance-based framework for measuring functional diversity from multiple traits. \emph{Ecology} \bold{91}299:305.
 }
-\author{Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com} \url{http://www.elaliberte.info}}
+\author{Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com} \url{https://www.elaliberte.info/}}
 \note{
 \code{fdisp} is implemented in \code{\link{dbFD}} and is used to compute the functional dispersion (FDis) index.
 }

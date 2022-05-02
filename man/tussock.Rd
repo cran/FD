@@ -25,7 +25,7 @@ The functional traits were measured using standardized methodologies (Cornelisse
 \source{
 Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com}
 
-\url{http://www.elaliberte.info}
+\url{https://www.elaliberte.info/}
 }
 \references{
 Cornelissen, J. H. C., S. Lavorel, E. Garnier, S. Diaz, N. Buchmann, D. E. Gurvich, P. B. Reich, H. ter Steege, H. D. Morgan, M. G. A. van der Heijden, J. G. Pausas and H. Poorter. (2003) A handbook of protocols for standardised and easy measurement of plant functional traits worldwide. \emph{Australian Journal of Botany} \bold{51}:335-380.
