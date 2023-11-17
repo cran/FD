@@ -1,4 +1,4 @@
-02e25df40a0663a6305b3867e9b2ef1b *DESCRIPTION
+4bf31df0def2f2c043957a212239107d *DESCRIPTION
 35b8fc5093d8051f485f33c3f44af0cc *NAMESPACE
 fe5ad6073e0f6e9daea7b507fe36a8f9 *R/dbFD.R
 65c1d36d34b456c802c91e6325a9ba66 *R/fdisp.R
@@ -8,8 +8,8 @@ e915b591fea48d1cac2b2c006656672b *R/mahaldis.R
 613b69f372d5bbce1cd7c5e62543f439 *R/maxent.R
 31fe86c61c204ba3be51d28f70f8c139 *R/maxent.test.R
 60c27cf5a70aeef410048e0e49ac7810 *R/simul.dbFD.R
-f0df1f412f2f230ed9c98fc77a215f25 *data/dummy.rda
-e6748e10667b2c5094e64fe57c629bcc *data/tussock.rda
+57fe302b0a7d0f9d6c40dca50f6ded35 *data/dummy.rda
+0bf55d81e9b198d0d2654bc1253c3c59 *data/tussock.rda
 56990c22d31a0338a348d2abdcfd3a5f *inst/CITATION
 b907511eb9da11d750164e6ce95cf51a *inst/NEWS
 4f44d1f264a8bff93fb15a651fb940a1 *man/FD-package.Rd
