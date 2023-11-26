@@ -1,4 +1,3 @@
-\encoding{latin1}
 \name{mahaldis}
 \alias{mahaldis}
 \title{Mahalanobis Distance}
@@ -28,7 +27,7 @@ Pierre Legendre \email{pierre.legendre@umontreal.ca}
 
 \url{http://adn.biol.umontreal.ca/~numericalecology/}
 
-Ported to \pkg{FD} by Etienne \enc{Laliberté}{Laliberte}.
+Ported to \pkg{FD} by Etienne \enc{LalibertÃ©}{Laliberte}.
 }
 \seealso{\code{\link[stats]{mahalanobis}} computes the Mahalanobis distances among groups of objects, not individual objects.}
 \examples{

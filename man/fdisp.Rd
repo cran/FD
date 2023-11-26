@@ -1,4 +1,3 @@
-\encoding{latin1}
 \name{fdisp}
 \alias{fdisp}
 \concept{multivariate dispersion}
@@ -6,7 +5,7 @@
 \concept{functional diversity}
 \title{Functional Dispersion}
 \description{
-\code{fdisp} measures the functional dispersion (FDis) of a set of communities, as described by \enc{LalibertÈ}{Laliberte} and Legendre (2010).
+\code{fdisp} measures the functional dispersion (FDis) of a set of communities, as described by \enc{Lalibert√©}{Laliberte} and Legendre (2010).
 }
 \usage{
 fdisp(d, a, tol = 1e-07)
@@ -18,11 +17,11 @@ The number of species (columns) in \code{a} must match the number of species in 
   \item{tol}{tolerance threshold to test whether the distance matrix is Euclidean : an eigenvalue is considered positive if it is larger than -tol*\eqn{{\lambda}_1}{lambda1}, where \eqn{{\lambda}_1}{lambda1} is the largest eigenvalue.}
 }
 \details{
-\code{fdisp} computes, for a set of communities, the average distance of individual objects (species) in PCoA space from any distance or dissimilarity measure, as described by Anderson (2006). The average distance to the centroid is a measure of multivariate dispersion and as been suggested as an index of beta diversity (Anderson et al. 2006). However, in \code{fdisp} both the centroid and the average distance to this centroid can be weighted by individual objects. In other words, \code{fdisp} returns the weighted average distance to the weighted centroid. This was suggested so that multivariate dispersion could be used as a multidimensional functional diversity (FD) index that can be weighted by species abundances. This FD index has been called functional dispersion (FDis) and is described by \enc{LalibertÈ}{Laliberte} and Legendre (2010).
+\code{fdisp} computes, for a set of communities, the average distance of individual objects (species) in PCoA space from any distance or dissimilarity measure, as described by Anderson (2006). The average distance to the centroid is a measure of multivariate dispersion and as been suggested as an index of beta diversity (Anderson et al. 2006). However, in \code{fdisp} both the centroid and the average distance to this centroid can be weighted by individual objects. In other words, \code{fdisp} returns the weighted average distance to the weighted centroid. This was suggested so that multivariate dispersion could be used as a multidimensional functional diversity (FD) index that can be weighted by species abundances. This FD index has been called functional dispersion (FDis) and is described by \enc{Lalibert√©}{Laliberte} and Legendre (2010).
 
-In sum, FDis can account for relative abundances by shifting the position of the centroid towards the most abundant species, and then computing a weighted average distance to this new centroid, using again the relative abundances as weights (\enc{LalibertÈ}{Laliberte} and Legendre 2010). FDis has no upper limit and requires at least two species to be computed. For communities composed of only one species, \code{dbFD} returns a FDis value of 0. FDis is by construction unaffected by species richness, it can be computed from any distance or dissimilarity measure (Anderson et al. 2006), it can handle any number and type of traits (including more traits than species), and it is not strongly influenced by outliers.
+In sum, FDis can account for relative abundances by shifting the position of the centroid towards the most abundant species, and then computing a weighted average distance to this new centroid, using again the relative abundances as weights (\enc{Lalibert√©}{Laliberte} and Legendre 2010). FDis has no upper limit and requires at least two species to be computed. For communities composed of only one species, \code{dbFD} returns a FDis value of 0. FDis is by construction unaffected by species richness, it can be computed from any distance or dissimilarity measure (Anderson et al. 2006), it can handle any number and type of traits (including more traits than species), and it is not strongly influenced by outliers.
 
-FDis is conceptually similar to Rao's quadratic entropy Q (\enc{Botta-Duk·t}{Botta-Dukat} 2005), and simulations (via \code{\link{simul.dbFD}}) have shown high positive correlations between the two indices (\enc{LalibertÈ}{Laliberte} and Legendre 2010). Still, one potential advantage of FDis over Rao's Q is that in the unweighted case (i.e. with presence-absence data), it opens possibilities for formal statistical tests for differences in FD between two or more communities through a distance-based test for homogeneity of multivariate dispersions (Anderson 2006); see \code{\link[vegan]{betadisper}} for more details.
+FDis is conceptually similar to Rao's quadratic entropy Q (\enc{Botta-Duk√°t}{Botta-Dukat} 2005), and simulations (via \code{\link{simul.dbFD}}) have shown high positive correlations between the two indices (\enc{Lalibert√©}{Laliberte} and Legendre 2010). Still, one potential advantage of FDis over Rao's Q is that in the unweighted case (i.e. with presence-absence data), it opens possibilities for formal statistical tests for differences in FD between two or more communities through a distance-based test for homogeneity of multivariate dispersions (Anderson 2006); see \code{\link[vegan]{betadisper}} for more details.
 
 Corrections for PCoA axes corresponding to negative eigenvalues are applied following Anderson (2006); see also \code{\link[vegan]{betadisper}} for more details on these corrections.
 }
@@ -36,11 +35,11 @@ Anderson, M. J. (2006) Distance-based tests for homogeneity of multivariate disp
 
 Anderson, M. J., K. E. Ellingsen and B. H. McArdle (2006) Multivariate dispersion as a measure of beta diversity. \emph{Ecology Letters} \bold{9}:683-693.
 
-\enc{Botta-Duk·t}{Botta-Dukat}, Z. (2005) Rao's quadratic entropy as a measure of functional diversity based on multiple traits. \emph{Journal of Vegetation Science} \bold{16}:533-540.
+\enc{Botta-Duk√°t}{Botta-Dukat}, Z. (2005) Rao's quadratic entropy as a measure of functional diversity based on multiple traits. \emph{Journal of Vegetation Science} \bold{16}:533-540.
 
-\enc{LalibertÈ}{Laliberte}, E. and P. Legendre (2010) A distance-based framework for measuring functional diversity from multiple traits. \emph{Ecology} \bold{91}299:305.
+\enc{Lalibert√©}{Laliberte}, E. and P. Legendre (2010) A distance-based framework for measuring functional diversity from multiple traits. \emph{Ecology} \bold{91}299:305.
 }
-\author{Etienne \enc{LalibertÈ}{Laliberte} \email{etiennelaliberte@gmail.com} \url{https://www.elaliberte.info/}}
+\author{Etienne \enc{Lalibert√©}{Laliberte} \email{etiennelaliberte@gmail.com} \url{https://www.elaliberte.info/}}
 \note{
 \code{fdisp} is implemented in \code{\link{dbFD}} and is used to compute the functional dispersion (FDis) index.
 }

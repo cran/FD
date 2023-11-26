@@ -1,4 +1,3 @@
-\encoding{latin1}
 \name{gowdis}
 \alias{gowdis}
 \title{Gower Dissimilarity}
@@ -72,7 +71,7 @@ Legendre, P. and L. Legendre (1998) \emph{Numerical Ecology}. 2nd English editio
 
 Podani, J. (1999) Extending Gower's general coefficient of similarity to ordinal characters. \emph{Taxon} \bold{48}:331-340.
 }
-\author{Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com} \url{https://www.elaliberte.info/}, with some help from Philippe Casgrain for the C interface.}
+\author{Etienne \enc{LalibertÃ©}{Laliberte} \email{etiennelaliberte@gmail.com} \url{https://www.elaliberte.info/}, with some help from Philippe Casgrain for the C interface.}
 \seealso{\code{\link[cluster]{daisy}} is similar but less flexible, since it does not include variable weights and does not treat ordinal variables as described by Podani (1999). Using \code{ord = "classic"} reproduces the behaviour of \code{\link[cluster]{daisy}}.}
 \examples{
 ex1 <- gowdis(dummy$trait)

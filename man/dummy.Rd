@@ -1,4 +1,3 @@
-\encoding{latin1}
 \name{dummy}
 \alias{dummy}
 \docType{data}
@@ -14,6 +13,6 @@ A dummy dataset containing 8 species and 8 functional traits (2 continuous, 2 no
 }
 }
 \source{
-Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com}
+Etienne \enc{LalibertÃ©}{Laliberte} \email{etiennelaliberte@gmail.com}
 }
 \keyword{datasets}

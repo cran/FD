@@ -1,4 +1,3 @@
-\encoding{latin1}
 \name{simul.dbFD}
 \alias{simul.dbFD}
 \concept{functional diversity}
@@ -35,11 +34,11 @@ A list contaning the following elements:
 A graph plotting the results of the simulations is also returned.
 }
 \references{
-\enc{Laliberté}{Laliberte}, E. and P. Legendre (2010) A distance-based framework for measuring functional diversity from multiple traits. \emph{Ecology} \bold{91}299:305.
+\enc{LalibertÃ©}{Laliberte}, E. and P. Legendre (2010) A distance-based framework for measuring functional diversity from multiple traits. \emph{Ecology} \bold{91}299:305.
 
 Ricotta, C. (2005) A note on functional diversity measures. \emph{Basic and Applied Ecology} \bold{6}:479-486.
 }
-\author{Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com} \url{https://www.elaliberte.info/}}
+\author{Etienne \enc{LalibertÃ©}{Laliberte} \email{etiennelaliberte@gmail.com} \url{https://www.elaliberte.info/}}
 \section{Warning}{The simulations performed by \code{simul.dbFD} can take several hours if \code{length(s)} and/or \code{r} is large. Run a test with the default parameters first.} 
 \seealso{\code{\link{dbFD}}, the function called in \code{simul.dbFD}}
 \examples{

@@ -1,4 +1,3 @@
-\encoding{latin1}
 \name{tussock}
 \alias{tussock}
 \concept{New Zealand}
@@ -23,7 +22,7 @@
 The functional traits were measured using standardized methodologies (Cornelissen et al. 2003). Each of the 30 experimental plots from which species cover was estimated is 8x50 m. Relative abundances of all vascular plant species were estimated in November 2007. To do so, 20 1x1-m quadrats per plot were randomly positioned along two longitudinal transects and cover of each species was estimated using a modified Braun-Blanquet scale. This data was pooled at the plot scale to yield the percent cover data.
 }
 \source{
-Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com}
+Etienne \enc{LalibertÃ©}{Laliberte} \email{etiennelaliberte@gmail.com}
 
 \url{https://www.elaliberte.info/}
 }
@@ -31,7 +30,7 @@ Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com}
 Cornelissen, J. H. C., S. Lavorel, E. Garnier, S. Diaz, N. Buchmann, D. E. Gurvich, P. B. Reich, H. ter Steege, H. D. Morgan, M. G. A. van der Heijden, J. G. Pausas and H. Poorter. (2003) A handbook of protocols for standardised and easy measurement of plant functional traits worldwide. \emph{Australian Journal of Botany} \bold{51}:335-380.
 
 
-\enc{Laliberté}{Laliberte}, E., Norton, D. A. and D. Scott. (2008) Impacts of rangeland development on plant functional diversity, ecosystem processes and services, and resilience. \emph{Global Land Project (GLP) Newsletter} \bold{4}:4-6.
+\enc{LalibertÃ©}{Laliberte}, E., Norton, D. A. and D. Scott. (2008) Impacts of rangeland development on plant functional diversity, ecosystem processes and services, and resilience. \emph{Global Land Project (GLP) Newsletter} \bold{4}:4-6.
 
 Scott, D. (1999) Sustainability of New Zealand high-country pastures under contrasting development inputs. 1. Site, and shoot nutrients. \emph{New Zealand Journal of Agricultural Research} \bold{42}:365-383.
 }

@@ -1,4 +1,3 @@
-\encoding{latin1}
 \name{maxent.test}
 \Rdversion{1.1}
 \alias{maxent.test}
@@ -92,7 +91,7 @@ Shipley, B. (2010) Inferential permutation tests for maximum entropy models in e
 }
 
 \author{
-Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com}
+Etienne \enc{LalibertÃ©}{Laliberte} \email{etiennelaliberte@gmail.com}
 
 \url{https://www.elaliberte.info/}
 }
@@ -102,7 +101,7 @@ Etienne \enc{Laliberté}{Laliberte} \email{etiennelaliberte@gmail.com}
 \seealso{
 \code{\link{maxent}} to run the maximum entropy model that is required by \code{maxent.test}.
 
-Another faster version of \code{maxent.test} for multicore processors called \code{maxent.testMC} is available from Etienne \enc{Laliberté}{Laliberte} (\email{etiennelaliberte@gmail.com}). It's exactly the same as \code{maxent.test} but makes use of the \pkg{multicore}, \pkg{doMC}, and \pkg{foreach} packages. Because of this, \code{maxentMC} only works on POSIX-compliant OS's (essentially anything but Windows).
+Another faster version of \code{maxent.test} for multicore processors called \code{maxent.testMC} is available from Etienne \enc{LalibertÃ©}{Laliberte} (\email{etiennelaliberte@gmail.com}). It's exactly the same as \code{maxent.test} but makes use of the \pkg{multicore}, \pkg{doMC}, and \pkg{foreach} packages. Because of this, \code{maxentMC} only works on POSIX-compliant OS's (essentially anything but Windows).
 }
 \examples{
 

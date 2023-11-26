@@ -1,4 +1,3 @@
-\encoding{latin1}
 \name{maxent}
 \Rdversion{1.1}
 \alias{maxent}
@@ -144,7 +143,7 @@ Della Pietra, S., V. Della Pietra, and J. Lafferty (1997) Inducing features of r
 
 Keddy, P. A. (1992) Assembly and response rules: two goals for predictive community ecology. \emph{Journal of Vegetation Science} \bold{3}:157-164.
 
-Shipley, B., D. Vile, and \enc{É}{E}. Garnier (2006) From plant traits to plant communities: a statistical mechanistic approach to biodiversity. \emph{Science} \bold{314}: 812--814.
+Shipley, B., D. Vile, and \enc{Ã‰}{E}. Garnier (2006) From plant traits to plant communities: a statistical mechanistic approach to biodiversity. \emph{Science} \bold{314}: 812--814.
 
 Shipley, B. (2009) From Plant Traits to Vegetation Structure: Chance and Selection in the Assembly of Ecological Communities. Cambridge University Press, Cambridge, UK. 290 pages.
 
@@ -157,14 +156,14 @@ Bill Shipley \email{bill.shipley@usherbrooke.ca}
 
 \url{http://www.billshipley.recherche.usherbrooke.ca/}
 
-Ported to \pkg{FD} by Etienne \enc{Laliberté}{Laliberte}.
+Ported to \pkg{FD} by Etienne \enc{LalibertÃ©}{Laliberte}.
 }
 
 \seealso{
 \code{\link{functcomp}} to compute community-aggregated traits,
 and \code{\link{maxent.test}} for the permutation tests proposed by Shipley (2010).
 
-Another faster version of \code{maxent} for multicore processors called \code{maxentMC} is available from Etienne \enc{Laliberté}{Laliberte} (\email{etiennelaliberte@gmail.com}). It's exactly the same as \code{maxent} but makes use of the \pkg{multicore}, \pkg{doMC}, and \pkg{foreach} packages. Because of this, \code{maxentMC} only works on POSIX-compliant OS's (essentially anything but Windows).
+Another faster version of \code{maxent} for multicore processors called \code{maxentMC} is available from Etienne \enc{LalibertÃ©}{Laliberte} (\email{etiennelaliberte@gmail.com}). It's exactly the same as \code{maxent} but makes use of the \pkg{multicore}, \pkg{doMC}, and \pkg{foreach} packages. Because of this, \code{maxentMC} only works on POSIX-compliant OS's (essentially anything but Windows).
 }
 \examples{
 # an unbiased 6-sided dice, with mean = 3.5

@@ -2,13 +2,13 @@ citHeader("To cite the FD package in publications please use:")
 
 citEntry(entry="article",
          title = "A distance-based framework for measuring functional diversity from multiple traits",
-         author = personList(person("Etienne", "Laliberté", email="etiennelaliberte@gmail.com"), person("Pierre", "Legendre", email="pierre.legendre@umontreal.ca")),
+         author = personList(person("Etienne", "LalibertÃ©", email="etiennelaliberte@gmail.com"), person("Pierre", "Legendre", email="pierre.legendre@umontreal.ca")),
  journal="Ecology",
  year="2010",
  volume="91",
  pages="299--305",
 
- textVersion="Laliberté, E., and P. Legendre (2010) A distance-based framework for measuring functional diversity from multiple traits. Ecology 91:299-305.")
+ textVersion="LalibertÃ©, E., and P. Legendre (2010) A distance-based framework for measuring functional diversity from multiple traits. Ecology 91:299-305.")
 
 if(!exists("meta") || is.null(meta)) meta <- packageDescription("foo")
 year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
@@ -16,11 +16,11 @@ vers <- paste("R package version", meta$Version)
 
 citEntry(entry="Manual",
 title = "FD: measuring functional diversity from multiple traits, and other tools for functional ecology",
-author = personList(person("Etienne", "Laliberté", email="etiennelaliberte@gmail.com"), person("Pierre", "Legendre", email="pierre.legendre@umontreal.ca"), person("Bill", "Shipley", email="bill.shipley@usherbrooke.ca")),
+author = personList(person("Etienne", "LalibertÃ©", email="etiennelaliberte@gmail.com"), person("Pierre", "Legendre", email="pierre.legendre@umontreal.ca"), person("Bill", "Shipley", email="bill.shipley@usherbrooke.ca")),
 year = year,
 note = vers,
 textVersion =
-paste("Laliberté, E., Legendre, P., and B. Shipley. (",
+paste("LalibertÃ©, E., Legendre, P., and B. Shipley. (",
 year,
 "). FD: measuring functional diversity from multiple traits, and other tools for functional ecology. ",
 vers, ".", sep=""))
